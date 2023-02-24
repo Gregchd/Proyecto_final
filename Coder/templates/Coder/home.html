@@ -1,0 +1,50 @@
+{% extends "Coder/padre.html" %}
+
+{% block logeo %}
+
+{% if request.user.is_authenticated %}
+<h1 class="display-5 fw-bolder text-white mb-2">¡Bienvenido {{request.user}}! </h1>
+
+{% else %}
+
+<p class="lead text-white-50 mb-4">{{mensaje}}</p>
+<p class="lead text-white-50 mb-4">Inicie sesión o registrese para continuar</p>
+<div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'login'%}">Iniciar Sesión</a>
+    <a class="btn btn-outline-light btn-lg px-4" href="{% url 'registro' %}">Registrarse</a>
+</div>
+
+{%endif%}
+
+{% endblock %}
+
+{% block floro%}
+<!-- Features section-->
+<section class="py-5 border-bottom" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-collection"></i>
+                </div>
+                <h2 class="h4 fw-bolder">Variedad de productos</h2>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                    sentence and probably just keep going until we run out of words.</p>
+            </div>
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-building"></i>
+                </div>
+                <h2 class="h4 fw-bolder">Garantía</h2>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                    sentence and probably just keep going until we run out of words.</p>
+            </div>
+            <div class="col-lg-4">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-toggles2"></i>
+                </div>
+                <h2 class="h4 fw-bolder">Personaliza tu orden</h2>
+                <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
+                    sentence and probably just keep going until we run out of words.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

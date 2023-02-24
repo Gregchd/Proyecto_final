@@ -1,0 +1,13 @@
+{% extends "Coder/padre.html" %}
+
+{% block products %}
+
+<form action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+
+    {{form_productos.as_p}}
+
+    <input type="submit" value="Crear">
+
+</form>
+
+{% endblock %}

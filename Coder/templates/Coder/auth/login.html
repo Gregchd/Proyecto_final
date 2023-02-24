@@ -1,0 +1,14 @@
+{% extends "Coder/padre.html" %}
+
+{% block logeo %}
+
+<form action="" method="POST"> {% csrf_token %}
+    <table style="color: white;"">
+        {{miForm.as_table}}
+    </table>
+
+    <input type="submit" value="Iniciar sesión">
+
+</form>
+
+{% endblock %}

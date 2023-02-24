@@ -1,0 +1,58 @@
+{% extends "Coder/padre.html" %}
+
+{% block logeo %}
+
+<h1 class="display-5 fw-bolder text-white mb-2">Celulares con camara de {{camara}} Megapixeles</h1>
+
+{% endblock %}
+
+{% block products %}
+
+<ul>
+    <section class="bg-light py-5 border-bottom">
+        <div class="container px-5 my-5">
+            {% for i in resultado %}
+            <div class="row gx-5 justify-content-center">
+    
+                <div class="col-lg-6 col-xl-4">
+                    <div class="card mb-5 mb-xl-0">
+                        <div class="card-body p-5">
+                            <div class="small text-uppercase fw-bold text-muted">{{i.nombre}}</div>
+                            <img height="450px" src="{{i.imagen.url}}">
+                            <div class="mb-3">
+                                <span class="display-4 fw-bold">S/{{i.precio}}</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    <strong>Camara: {{i.camara}} Mpx</strong>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    <strong>Memoria: {{i.memoria}} gb</strong>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    <strong>Ram: {{i.ram}} gb</strong>
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-check text-primary"></i>
+                                    <strong>Bateria: {{i.bateria}} mAh</strong>
+                                </li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-outline-primary"
+                                    href="{% url 'Editar productos' i.id %}">Editar</a></div>
+                            <div class="d-grid""><a class=" btn btn-outline-primary"
+                                href="{% url 'Borrar productos' i.id %}">Borrar</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+
+</ul>
+
+{% endblock %}

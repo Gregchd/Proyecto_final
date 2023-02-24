@@ -1,0 +1,15 @@
+{% extends "Coder/padre.html" %}
+
+
+
+{% block logeo %}
+
+<h1 class="display-5 fw-bolder text-white mb-2">Ingrese los megapixeles de la camara:</h1>
+<form style="margin-top: 30px;" action="/Coder/productos/v_busqueda/" method="GET">
+
+    <input type="number" name="camara">
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% endblock %}
